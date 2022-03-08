@@ -1,0 +1,12 @@
+.vscode/
+node_modules/
+.editorconfig
+.eslintignore
+.eslintrc.js
+.prettierrc.js
+.stylelintignore
+.stylelintrc.js
+commitlint.config.js
+f2elint.config.js
+package.json
+package-lock.json
