@@ -1,4 +1,88 @@
 <!DOCTYPE html>
 <head>
-  s
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>信息切换</title>
+  <script type="text/javascript" src="index.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-size: 14px;
+    }
+    ul {
+      list-style: none;
+    }
+    #container {
+      width: 1000px;
+      margin: 150px auto;
+      /* background-color: aqua; */
+    }
+    #header {
+      border-bottom: 3px solid #f60;
+      height: 30px;
+    }
+    #header li:hover {
+      cursor: pointer;
+    }
+    #header li {
+      font-weight: bold;
+      float: left;
+      height: 30px;
+      width: 80px;
+      text-align: center;
+      line-height: 30px;
+    }
+    #header .sec {
+      background: #f60;
+      color: #fff;
+    }
+    #list_content li {
+      font-weight: bolder;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+    }
+    #tips {
+      padding: 5px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 400px;
+      border: 2px solid #ff7700;
+      background-color: white;
+      display: none;
+
+    }
+    #tips li {
+      list-style: none;
+      font-size: 16px;
+      height: 30px;
+      line-height: 30px;
+    }
+    #tips li.col {
+      width: 200px;
+      height: 30px;
+      float: left;
+      line-height: 30px;
+      text-align: center;
+      border-bottom: 1px solid #CCC;
+    }
+    #tips h4{
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+    }
+  </style>
 </head>
+<body>
+  <div id="container">
+    <ul id="header"></ul>
+    <div id="list_content"></div>
+  </div>
+  <div id="tips">
+    <span id="arrow"></span>
+    <div id="tips_content"></div>
+  </div>
+</body>
