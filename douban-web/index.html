@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="index.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        text-decoration: none;
+        color: inherit;
+      }
+      .db_global_nav {
+        background-color: #545652;
+        height: 28px;
+        min-width: 950px;
+        color: #d5d5d5;
+        font: 12px Helvetica, Arial, sans-serif;
+        line-height: 28px;
+      }
+      #db_nav_sns {
+        background-color: #edf4ed;
+        width: 100%;
+        min-width: 1040px;
+        margin-bottom: 50px;
+        height: 74px;
+      }
+      #content {
+        width: 1040px;
+        /* background-color: aqua; */
+        min-height: 2050px;
+        margin: auto;
+      }
+      #global_nav_items ul li {
+        float: left;
+        padding: 0px 12px;
+      }
+      #global_nav_items ul li a:hover,
+      .top_nav_info ul li a:hover,
+      .top_nac_other div a:hover {
+        color: #ffffff;
+      }
+      .top_nav_info {
+        display: block;
+        margin: 0px 12px 0px 0px;
+      }
+      .top_nav_info ul li {
+        float: right;
+        padding: 0px 12px;
+      }
+
+      .douyou {
+        margin-right: 3.35px;
+        margin-left: 5px;
+      }
+      .arrow {
+        position: relative;
+        top: 9px;
+        left: 2px;
+        border-style: solid dashed dashed dashed;
+        border-width: 3px 3px 0;
+        border-color: #d5d5d5 transparent transparent transparent;
+      }
+      .top_nav_info ul li a:hover .arrow {
+        border-color: #ffffff transparent transparent transparent;
+      }
+      .top_nac_other div a {
+        float: right;
+        padding: 0px 12px;
+      }
+      .download_app a {
+        margin-right: 1px;
+      }
+      .top_nav_account {
+        position: relative;
+      }
+      .top_nav_account_more {
+        position: absolute;
+        color: #3d3d3d;
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        top: 28px;
+        padding: 10px 0;
+        width: 88px;
+        right: 6px;
+        display: none;
+      }
+      .top_nav_account_more ul li {
+        /* background-color: aqua; */
+        padding: 0 20px;
+        width: 48px;
+      }
+      .top_nav_account_more ul li a {
+        text-align: left;
+      }
+      .top_nav_account_more ul li:hover a {
+        color: #3d3d3d;
+      }
+      .top_nav_account_more ul li:hover {
+        background-color: #f6f6f6;
+        cursor: pointer;
+      }
+      #db_nav_center {
+        height: 100%;
+        width: 1040px;
+        display: block;
+        margin: 0 auto;
+      }
+      #db_nav_center_inside {
+        padding: 12px 0px 5px;
+        /* background-color: yellow; */
+        width: 100%;
+        height: 57px;
+        background-clip: content-box;
+      }
+      #db_logo {
+        height: 57px;
+        width: 184px;
+        margin: 0 13px 0 0;
+        float: left;
+        /* background-position: 0 10px; */
+      }
+      #db_logo img {
+        height: 30px;
+        width: 153px;
+        margin: 10px 0 0 0;
+      }
+      #main_title {
+        float: left;
+        margin-top: 16px;
+      }
+      #main_title ul li {
+        float: left;
+        height: 17px;
+        font-size: 16px;
+        padding-right: 24px;
+        color: #072;
+      }
+      #main_title ul li:nth-child(2) {
+        padding-right: 23.5px;
+      }
+      #main_title ul li:nth-child(3) {
+        padding-right: 24.5px;
+      }
+      #main_title ul li:hover a {
+        color: #ffffff;
+        background-color: #072;
+      }
+      .topic_square {
+        position: relative;
+      }
+      .topic_square::after {
+        background-image: url(./image/new_menu.gif);
+        content: '';
+        width: 17px;
+        height: 7px;
+        position: absolute;
+        top: -4px;
+        left: 59px;
+      }
+      #search_block {
+        float: right;
+        
+        /* background-color: #072; */
+        width: 278px;
+        height: 28px;
+        padding: 10px 0 15px;
+        /* background-color: #545652; */
+      }
+      #search_block input {
+        border: 1px solid #e1e9e1;
+        border-right: none;
+        width: 252px;
+        height: 28px;
+        /* float: left; */
+      }
+      #search_block input::placeholder {
+        color: #bbb;
+        font-size: 13px;
+        padding: 8px;
+      }
+      #search_block img{
+        margin: 8px 0px 0px 2px;
+      }
+      #srh_block{
+        background-color: #ffffff;
+        width: 24px;
+        height: 28px; 
+        float: right;
+        border: 1px solid #e1e9e1;
+        border-left: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="db_global_nav" class="db_global_nav">
+      <div id="global_nav_items">
+        <ul>
+          <li>
+            <a href="https://www.douban.com">豆瓣</a>
+          </li>
+          <li>
+            <a href="https://book.douban.com">读书</a>
+          </li>
+          <li>
+            <a href="https://movie.douban.com">电影</a>
+          </li>
+          <li>
+            <a href="https://music.douban.com">音乐</a>
+          </li>
+          <li>
+            <a href="https://www.douban.com/location">同城</a>
+          </li>
+          <li><a href="https://www.douban.com/group">小组</a></li>
+          <li>
+            <a href="https://read.douban.com">阅读</a>
+          </li>
+          <li><a href="https://douban.fm/?from_=shire_top_nav">FM</a></li>
+          <li><a href="https://time.douban.com/?dt_time_source=douban-web_top_nav">时间</a></li>
+          <li>
+            <a
+              href="https://market.douban.com/?utm_campaign=douban_top_nav&utm_source=douban&utm_medium=pc_web"
+              >豆品</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="top_nav_info">
+        <ul>
+          <li class="top_nav_account" id="top_nav_account">
+            <a href="#">
+              <span>orzzd的帐号</span>
+              <span class="arrow"></span>
+            </a>
+            <div class="top_nav_account_more">
+              <ul>
+                <li><a href="https://www.douban.com/mine/">个人主页</a></li>
+                <li><a href="https://www.douban.com/mine/orders/">我的订单</a></li>
+                <li><a href="https://www.douban.com/mine/wallet/">我的钱包</a></li>
+                <li><a href="https://accounts.douban.com/passport/setting/">帐号管理</a></li>
+                <li>
+                  <a href="https://www.douban.com/accounts/logout?source=main&ck=E9mV">退出</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="douyou"><a href="https://www.douban.com/doumail/">豆邮</a></li>
+        </ul>
+      </div>
+      <div class="top_nac_other">
+        <div>
+          <a href="https://www.douban.com/notification/" class="notification">提醒</a>
+        </div>
+        <div class="download_app">
+          <a href="https://www.douban.com/doubanapp/app?channel=top-nav">下载豆瓣客户端</a>
+        </div>
+      </div>
+    </div>
+    <div id="db_nav_sns">
+      <div id="db_nav_center">
+        <div id="db_nav_center_inside">
+          <div id="db_logo">
+            <a href="https://www.douban.com">
+              <img src="./image/lg_main@2x.png" alt="" />
+            </a>
+          </div>
+          <div id="main_title">
+            <ul>
+              <li><a href="https://www.douban.com">首页</a></li>
+              <li><a href="https://www.douban.com/mine">我的豆瓣</a></li>
+              <li><a href="https://www.douban.com/explore">浏览发现</a></li>
+              <li><a href="https://www.douban.com/gallery" class="topic_square"> 话题广场 </a></li>
+            </ul>
+          </div>
+          <div id="search_block">
+            <input type="text" placeholder="搜索你感兴趣的内容和人..." />
+            <div id="srh_block">
+              <img src="./image/bn_srh_1.png" alt="">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="content"></div>
+    </div>
+  </body>
+</html>
