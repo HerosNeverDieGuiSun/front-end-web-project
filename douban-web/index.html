@@ -3,9 +3,13 @@
   <head>
     <script src="index.js"></script>
     <style>
+      html{
+        height: 1911px;
+      }
       * {
         margin: 0;
         padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
       }
       ul {
         list-style: none;
@@ -36,12 +40,6 @@
         min-width: 1040px;
         margin-bottom: 50px;
         height: 74px;
-      }
-      #content {
-        width: 1040px;
-        /* background-color: aqua; */
-        min-height: 2050px;
-        margin: auto;
       }
       #global_nav_items ul li {
         float: left;
@@ -167,12 +165,12 @@
         width: 17px;
         height: 7px;
         position: absolute;
-        top: -4px;
+        top: -7px;
         left: 59px;
       }
       #search_block {
         float: right;
-        
+
         /* background-color: #072; */
         width: 278px;
         height: 28px;
@@ -191,16 +189,436 @@
         font-size: 13px;
         padding: 8px;
       }
-      #search_block img{
+      #search_block img {
         margin: 8px 0px 0px 2px;
       }
-      #srh_block{
+      #srh_block {
         background-color: #ffffff;
         width: 24px;
-        height: 28px; 
+        height: 28px;
         float: right;
         border: 1px solid #e1e9e1;
         border-left: none;
+      }
+      #content {
+        width: 1040px;
+        /* background-color: aqua; */
+        min-height: 2050px;
+        margin: auto;
+      }
+      .content_left {
+        width: 675px;
+        height: 1000px;
+        float: left;
+        /* background-color: #3d3d3d; */
+      }
+      .content_right {
+        width: 300px;
+        height: 1000px;
+        background-color: #072;
+        float: right;
+      }
+      #isay_block {
+        width: 675px;
+        height: 30px;
+        /* background-color: #3d3d3d; */
+      }
+      #isay_block > ul > li {
+        float: left;
+        margin-right: 18px;
+        padding-left: 22px;
+        padding-top: 1px;
+        font: 14px Helvetica, Arial, sans-serif;
+      }
+      #isay_block > ul > li:first-child {
+        background: url(./image/isay_icons.3.svg) no-repeat, none;
+        background-position: 0 -94px;
+      }
+      #isay_block > ul > li:nth-child(2) {
+        background: url(./image/isay_icon_pic.svg) no-repeat, none;
+        background-position: 0 2px;
+        /* background-color: #072; */
+        color: #37a;
+      }
+      #isay_block > ul > li:nth-child(3) {
+        background: url(./image/isay_icons.3.svg) no-repeat, none;
+        background-position: 0 -4px;
+        color: #37a;
+      }
+      #isay_block > ul > li:nth-child(4) {
+        position: relative;
+        background: url(./image/isay_icons.3.svg) no-repeat, none;
+        background-position: 0 -125px;
+        color: #37a;
+      }
+      #isay_block > ul > li:nth-child(2):hover > a,
+      #isay_block > ul > li:nth-child(3):hover > a,
+      #isay_block > ul > li:nth-child(4) > a:hover {
+        background-color: #37a;
+        color: #ffffff;
+      }
+      .menu_switch {
+        position: absolute;
+        display: inline-block;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #37a;
+        top: 8px;
+        right: -20px;
+        cursor: pointer;
+      }
+      .index_set {
+        float: right;
+        display: inline;
+        font: 13px Helvetica, Arial, sans-serif;
+        color: #ccc;
+        background: url(./image/ic_setting.png) no-repeat, none;
+        width: 66px;
+        padding-top: 2px;
+        background-position: 0 4px;
+        background-size: 12px;
+        /* background-color: ; */
+      }
+      .index_set a {
+        padding-left: 14px;
+      }
+      .index_set:hover {
+        background-position: 0 -26px;
+      }
+      .index_set:hover a {
+        color: #999;
+      }
+      .order {
+        position: absolute;
+        width: 100px;
+        /* height: 100px; */
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%);
+        border-radius: 4px;
+        left: -50px;
+        top: 16px;
+        display: none;
+      }
+      .order li {
+        line-height: 40px;
+        height: 40px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .order > ul > li:hover {
+        background-color: #f9f9f9;
+        color: #37a;
+      }
+      .order li:first-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      }
+      #main_search_block {
+        position: relative;
+        margin-top: -4px;
+        width: 673px;
+        height: 30px;
+        border: 1px solid #d7d7d7;
+        /* background-color: #37a; */
+      }
+      #main_search_block input {
+        width: 556px;
+        height: 30px;
+        border: none;
+      }
+      #main_search_block input::placeholder {
+        position: absolute;
+        font: 12px Helvetica, Arial, sans-serif;
+        line-height: 1.62;
+        font-size: 14px;
+        color: #aaa;
+        top: 6px;
+        left: 9px;
+        font-family: Tahoma;
+      }
+      #main_search_block a {
+        position: absolute;
+        background: url(./image/isay_icons.3.svg);
+        height: 20px;
+        width: 18px;
+        background-position: 0 -35px;
+        right: 11px;
+        top: 5px;
+      }
+      .content_item_block1 {
+        width: 675px;
+        height: 283px;
+        /* background-color: #072; */
+        margin-top: 26px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .content_item_head {
+        width: 675px;
+        height: 56px;
+        margin-bottom: 9px;
+        /* background-color: #37a; */
+      }
+      .content_item_head_img_block {
+        float: left;
+      }
+      .content_item_head_img_block img {
+        height: 48px;
+        width: 48px;
+        cursor: pointer;
+      }
+      .content_item_head_info_block {
+        height: 56px;
+        width: 607px;
+        /* background-color: #37a; */
+        float: right;
+        color: #9d9d9d;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .content_item_head_info_block a {
+        /* background-color: #072; */
+        /* font: 12px Helvetica,Arial,sans-serif; */
+        font-family: Arial, Helvetica, sans-serif;
+        color: #555;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.62;
+      }
+      .content_item_head_info_block a:hover {
+        color: #fff;
+        background-color: #37a;
+      }
+      .content_item_head_info_sart {
+        color: #555;
+        margin-top: 11px;
+      }
+      .content_item_body {
+        height: 198px;
+        /* width: 675px; */
+        /* background-color: #37a; */
+        padding-left: 10%;
+      }
+      .content_item_body_main_block {
+        /* padding: 15px 20px 16px 20px; */
+        padding: 16px 20px;
+        /* background-color: #072; */
+        height: 133px;
+        background: #f9f9f9;
+      }
+      .content_item_body_main_info {
+        width: 100%;
+        height: 100%;
+        /* background-color: #072; */
+      }
+      .content_item_body_main_info .left {
+        width: 420px;
+        height: 100%;
+        float: left;
+        /* background-color: #072; */
+      }
+      .content_item_body_main_info .left .title {
+        margin-top: 1px;
+      }
+      .content_item_body_main_info .left .title a {
+        color: #37a;
+        font-size: 15px;
+        /* background-color: #072; */
+      }
+      .content_item_body_main_info .left .title a:hover {
+        background-color: #37a;
+        color: #fff;
+      }
+      .content_item_body_main_info .left .title span {
+        background: url(./image/ic_rating_s.png) no-repeat, none;
+        margin-left: 4px;
+        height: 11px;
+        width: 55px;
+        display: inline-block;
+        background-position: 0 -11px;
+      }
+      .content_item_body_main_info .left .title strong {
+        color: #e09015;
+        font-size: 14px;
+        padding: 0 3px;
+        font-weight: lighter;
+      }
+      .content_item_body_main_info .left > p {
+        margin-block-start: 8px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        color: #555;
+        font-size: 13px;
+        display: block;
+        line-height: 1.62;
+      }
+      .content_item_body_main_info .left .info {
+        padding-left: 7px;
+        color: #555;
+        font-size: 13px;
+        line-height: 1.62;
+        position: relative;
+        margin-top: 4px;
+      }
+      .content_item_body_main_info .left .info::before {
+        border-left: 2px solid #ddd;
+        content: '';
+        height: 52px;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+      }
+      .content_item_body_main_info .left .info li:first-child {
+        /* background-color: #072; */
+        margin-top: -2px;
+      }
+      .content_item_body_main_info .left .info li:nth-child(2),
+      .content_item_body_main_info .left .info li:last-child {
+        margin-top: -1px;
+      }
+      .content_item_body_main_info .left .info span:last-child {
+        position: relative;
+        margin-left: -1.5px;
+        /* margin-right: -1px; */
+        /* backgro
+        und-color: #072; */
+      }
+      .content_item_body_main_info .right {
+        float: right;
+        width: 75px;
+        height: 112px;
+        margin-right: 23px;
+      }
+      .content_item_body_main_info .right img {
+        width: 75px;
+        height: 112px;
+      }
+      .content_item_body_main_info .right:hover {
+        opacity: 0.8;
+      }
+
+      .content_item_body .foot {
+        margin: 20px 0 0;
+        color: #aaa;
+        height: 13px;
+        width: 100%;
+        /* background-color: #072; */
+        font-size: 13px;
+      }
+      .content_item_body .foot > a {
+        color: #999;
+        line-height: 1;
+        margin-right: 23px;
+        float: left;
+        /* text-align: left; */
+      }
+      .content_item_body .foot ul li {
+        float: left;
+        line-height: 1;
+        color: #7094b7;
+        margin-right: 11px;
+      }
+      .content_item_body .foot ul li:hover {
+        background-color: #7094b7;
+        color: #fff;
+      }
+      .content_item_block2 {
+        margin-top: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+      }
+      .content_item_block2 .content_item_body {
+        margin-top: 10px;
+        /* background-color: #072; */
+      }
+      .content_item_block2 .content_item_body .left > p {
+        margin-top: 7px;
+      }
+      .content_item_block2 .content_item_body .right img {
+        height: 106px;
+      }
+      .content_item_block3 {
+        margin-top: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+      }
+      .content_item_block3 .content_item_head_info_sart {
+        margin-top: 10px;
+      }
+      .content_item_block3 .content_item_body .left > p {
+        margin-top: 7px;
+      }
+      .content_item_block3 .info li:nth-child(2){
+        /* background-color: #072; */
+        margin-top: 0px !important;
+      }
+      .content_item_block3 .content_item_body_main_info .left .info::before{
+        height: 55px;
+      }
+      .content_item_block3 .content_item_body .right img {
+        height: 107px;
+      }
+      .content_item_block4{
+        margin-top: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+      }
+      .content_item_block4 .content_item_body{
+        margin-left: 1px !important;
+        margin-top: -32px;
+      }
+      .content_item_block4 .content_item_body_main_info .left{
+        /* padding-top: 10px !important; */
+        margin-top: -7px !important;
+        margin-left: -1px;
+        /* background-color: #072; */
+      }
+      .content_item_block4 .foot{
+        margin-left: -1px;
+      }
+      .content_item_block4 .left{
+        margin-left: -0.5px !important;
+        /* background-color: #072; */
+      }
+      .content_item_block4 .content_item_body .left > p {
+        margin-top: 7px;
+      }
+      .content_item_block4 .content_item_body .right{
+        margin-top: -7px;
+      }
+      .content_item_block4 .content_item_body .right img {
+        height: 106px;
+      }
+      .content_item_block4 .content_item_body_main_info .left .info::before{
+        height: 55px;
+      }
+      .content_item_block5{
+        margin-top: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+      }
+      .content_item_block5 .content_item_body{
+        margin-left: 1px !important;
+        margin-top: -33px;
+      }
+      .content_item_block5 .content_item_body_main_info .left{
+        /* padding-top: 10px !important; */
+        margin-top: -8px !important;
+        margin-left: -0.5px;
+        /* background-color: #072; */
+      }
+      .content_item_block5 .content_item_body .left > p {
+        margin-top: 7px;
+        /* padding-bottom: 1px; */
+        line-height: 1.7;
+      }
+      .content_item_block5 .foot{
+        margin-left: -1px;
+      }
+      .content_item_block5 .content_item_body .right{
+        margin-top: -8px;
+      }
+      .content_item_block5 .content_item_body_main_info .left .info{
+        margin-top: 3px;
       }
     </style>
   </head>
@@ -287,15 +705,338 @@
           <div id="search_block">
             <input type="text" placeholder="搜索你感兴趣的内容和人..." />
             <div id="srh_block">
-              <img src="./image/bn_srh_1.png" alt="">
+              <img src="./image/bn_srh_1.png" alt="" />
             </div>
-            
           </div>
         </div>
       </div>
     </div>
     <div id="wrapper">
-      <div id="content"></div>
+      <div id="content">
+        <div class="content_left">
+          <div id="isay_block">
+            <ul>
+              <li><a href="#">说句话</a></li>
+              <li><a href="#">发照片</a></li>
+              <li><a href="#">推荐网页</a></li>
+              <li>
+                <a href="#">写日记</a>
+                <div class="menu_switch">
+                  <div class="order">
+                    <ul>
+                      <li>创作片单</li>
+                      <li>创作书单</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="index_set">
+              <a href="#">首页设置</a>
+            </div>
+          </div>
+          <div id="main_search_block">
+            <input type="text" placeholder="分享生活点滴..." />
+            <a href="#"> </a>
+          </div>
+          <div class="content_item_block1">
+            <div class="content_item_head">
+              <div class="content_item_head_img_block">
+                <img src="./image/up194633327-1.jpg" alt="头像" />
+              </div>
+              <div class="content_item_head_info_block">
+                <a href="#">orzzd</a>
+                <span>看过</span>
+                <div class="content_item_head_info_sart">★★★★★</div>
+              </div>
+            </div>
+            <div class="content_item_body">
+              <div class="content_item_body_main_block">
+                <div class="content_item_body_main_info">
+                  <div class="left">
+                    <div class="title">
+                      <a href="https://movie.douban.com/subject/35209701/?_dtcc=1">
+                        和平使者 第一季 Peacemaker Season 1 (2022)
+                      </a>
+                      <span></span>
+                      <strong>8.8</strong>
+                    </div>
+                    <p>
+                      电影《X特遣队：全员集结》衍生剧，和平使者被救回去之后原以为自己获得了自由，结...
+                    </p>
+                    <div class="info">
+                      <ul>
+                        <li>
+                          <span>导演:</span>
+                          <span>詹姆斯·古恩 James Gunn</span>
+                        </li>
+                        <li>
+                          <span>主演:</span>
+                          <span>约翰·塞纳 John Cena</span>
+                        </li>
+                        <li>
+                          <span>类型:</span>
+                          <span>喜剧 动作 科幻 犯罪 奇幻 冒险</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <a href="https://movie.douban.com/subject/35209701/?_dtcc=1">
+                      <img src="./image/4yjTa1.webp" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <a href="#">3月6日</a>
+                <ul>
+                  <li><a href="#">回应</a></li>
+                  <li><a href="#">转发</a></li>
+                  <li><a href="#">删除</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content_item_block2">
+            <div class="content_item_head">
+              <div class="content_item_head_img_block">
+                <img src="./image/up194633327-1.jpg" alt="头像" />
+              </div>
+              <div class="content_item_head_info_block">
+                <a href="#">orzzd</a>
+                <span>看过</span>
+                <div class="content_item_head_info_sart">★★★★★</div>
+              </div>
+            </div>
+            <div class="content_item_body">
+              <div class="content_item_body_main_block">
+                <div class="content_item_body_main_info">
+                  <div class="left">
+                    <div class="title">
+                      <a href="https://movie.douban.com/subject/34874432/?_dtcc=1">
+                        花束般的恋爱 花束みたいな恋をした (2021)
+                      </a>
+                      <span></span>
+                      <strong>8.6</strong>
+                    </div>
+                    <p>
+                      山音麦 (菅田将晖 饰) 和八谷绢 (有村架纯 饰)
+                      因错过尾班车而相遇，在深夜咖啡馆...
+                    </p>
+                    <div class="info">
+                      <ul>
+                        <li>
+                          <span>导演:</span>
+                          <span>土井裕泰 Nobuhiro Doi</span>
+                        </li>
+                        <li>
+                          <span>主演:</span>
+                          <span>菅田将晖 Masaki Suda</span>
+                        </li>
+                        <li>
+                          <span>类型:</span>
+                          <span>剧情 爱情</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <a href="https://movie.douban.com/subject/34874432/?_dtcc=1">
+                      <img src="./image/1vTpZL.webp" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <a href="#">3月2日</a>
+                <ul>
+                  <li><a href="#">回应</a></li>
+                  <li><a href="#">转发</a></li>
+                  <li><a href="#">删除</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content_item_block3">
+            <div class="content_item_head">
+              <div class="content_item_head_img_block">
+                <img src="./image/up194633327-1.jpg" alt="头像" />
+              </div>
+              <div class="content_item_head_info_block">
+                <a href="#">orzzd</a>
+                <span>看过</span>
+                <div class="content_item_head_info_sart">★★★★★</div>
+              </div>
+            </div>
+            <div class="content_item_body">
+              <div class="content_item_body_main_block">
+                <div class="content_item_body_main_info">
+                  <div class="left">
+                    <div class="title">
+                      <a href="https://movie.douban.com/subject/24750126/?_dtcc=1">
+                        荒蛮故事 Relatos salvajes (2014)
+                      </a>
+                      <span></span>
+                      <strong>8.6</strong>
+                    </div>
+                    <p>
+                      《荒蛮故事》是一部黑色喜剧，由6个独立的暴力复仇小故事构成。影片是一次对于人类...
+                    </p>
+                    <div class="info">
+                      <ul>
+                        <li>
+                          <span>导演:</span>
+                          <span>达米安·斯兹弗隆 Damián Szifron</span>
+                        </li>
+                        <li>
+                          <span>主演:</span>
+                          <span>达里奥·葛兰帝内提 Darío Grandinetti</span>
+                        </li>
+                        <li>
+                          <span>类型:</span>
+                          <span>剧情 喜剧 犯罪</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <a href="https://movie.douban.com/subject/24750126/?_dtcc=1">
+                      <img src="./image/3KdIic.webp" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <a href="#">2月26日</a>
+                <ul>
+                  <li><a href="#">回应</a></li>
+                  <li><a href="#">转发</a></li>
+                  <li><a href="#">删除</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content_item_block4">
+            <div class="content_item_head">
+              <div class="content_item_head_img_block">
+                <img src="./image/up194633327-1.jpg" alt="头像" />
+              </div>
+              <div class="content_item_head_info_block">
+                <a href="#">orzzd</a>
+                <span>想看</span>
+              </div>
+            </div>
+            <div class="content_item_body">
+              <div class="content_item_body_main_block">
+                <div class="content_item_body_main_info">
+                  <div class="left">
+                    <div class="title">
+                      <a href="https://movie.douban.com/subject/34874432/?_dtcc=1">
+                        花束般的恋爱 花束みたいな恋をした (2021)
+                      </a>
+                      <span></span>
+                      <strong>8.6</strong>
+                    </div>
+                    <p>
+                      山音麦 (菅田将晖 饰) 和八谷绢 (有村架纯 饰)
+                      因错过尾班车而相遇，在深夜咖啡馆...
+                    </p>
+                    <div class="info">
+                      <ul>
+                        <li>
+                          <span>导演:</span>
+                          <span>土井裕泰 Nobuhiro Doi</span>
+                        </li>
+                        <li>
+                          <span>主演:</span>
+                          <span>菅田将晖 Masaki Suda</span>
+                        </li>
+                        <li>
+                          <span>类型:</span>
+                          <span>剧情 爱情</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <a href="https://movie.douban.com/subject/34874432/?_dtcc=1">
+                      <img src="./image/1vTpZL.webp" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <a href="#">2月24日</a>
+                <ul>
+                  <li><a href="#">回应</a></li>
+                  <li><a href="#">转发</a></li>
+                  <li><a href="#">删除</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content_item_block5">
+            <div class="content_item_head">
+              <div class="content_item_head_img_block">
+                <img src="./image/up194633327-1.jpg" alt="头像" />
+              </div>
+              <div class="content_item_head_info_block">
+                <a href="#">orzzd</a>
+                <span>想看</span>
+              </div>
+            </div>
+            <div class="content_item_body">
+              <div class="content_item_body_main_block">
+                <div class="content_item_body_main_info">
+                  <div class="left">
+                    <div class="title">
+                      <a href="https://movie.douban.com/subject/35209701/?_dtcc=1">
+                        和平使者 第一季 Peacemaker Season 1 (2022)
+                      </a>
+                      <span></span>
+                      <strong>8.8</strong>
+                    </div>
+                    <p>
+                      电影《X特遣队：全员集结》衍生剧，和平使者被救回去之后原以为自己获得了自由，结...
+                    </p>
+                    <div class="info">
+                      <ul>
+                        <li>
+                          <span>导演:</span>
+                          <span>詹姆斯·古恩 James Gunn</span>
+                        </li>
+                        <li>
+                          <span>主演:</span>
+                          <span>约翰·塞纳 John Cena</span>
+                        </li>
+                        <li>
+                          <span>类型:</span>
+                          <span>喜剧 动作 科幻 犯罪 奇幻 冒险</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <a href="https://movie.douban.com/subject/35209701/?_dtcc=1">
+                      <img src="./image/4yjTa1.webp" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <a href="#">2月24日</a>
+                <ul>
+                  <li><a href="#">回应</a></li>
+                  <li><a href="#">转发</a></li>
+                  <li><a href="#">删除</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_right"></div>
+      </div>
     </div>
   </body>
 </html>

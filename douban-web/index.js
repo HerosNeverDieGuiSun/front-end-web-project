@@ -15,6 +15,20 @@ window.onload = function () {
   top_nav_account_a.onmouseover = function () {
     top_nav_account_a.href = 'https://www.douban.com/mine/';
   };
+  const menu_switch = document.querySelector('.menu_switch');
+  const order = document.querySelector('.order');
+  menu_switch.onmouseover = function () {
+    order.style.display = 'block';
+    menu_switch.style.borderBottom = '6px solid #37a';
+    menu_switch.style.borderTop = 'none';
+  };
+  menu_switch.onmouseout = () => {
+    order.onmouseout = () => {
+      order.style.display = 'none';
+      menu_switch.style.borderTop = '6px solid #37a';
+      menu_switch.style.borderBottom = 'none';
+    };
+  };
 };
 window.addEventListener('click', (e) => {
   const top_nav_account = document.getElementById('top_nav_account');
