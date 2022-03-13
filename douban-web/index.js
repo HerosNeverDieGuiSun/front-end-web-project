@@ -41,3 +41,14 @@ window.addEventListener('click', (e) => {
     top_nav_account_a.style.color = '#d5d5d5';
   }
 });
+window.addEventListener('scroll', () => {
+  const hot = document.querySelector('.hot');
+  const height = document.documentElement.scrollTop;
+  if (height > 598) {
+    hot.style.position = 'fixed';
+    hot.style.top = '0';
+  } else {
+    hot.style.position = '';
+    hot.style.top = '';
+  }
+});

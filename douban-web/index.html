@@ -3,9 +3,6 @@
   <head>
     <script src="index.js"></script>
     <style>
-      html{
-        height: 1911px;
-      }
       * {
         margin: 0;
         padding: 0;
@@ -203,19 +200,19 @@
       #content {
         width: 1040px;
         /* background-color: aqua; */
-        min-height: 2050px;
+        min-height: 1671px;
         margin: auto;
       }
       .content_left {
         width: 675px;
-        height: 1000px;
+        /* height: 1000px; */
         float: left;
         /* background-color: #3d3d3d; */
       }
       .content_right {
         width: 300px;
-        height: 1000px;
-        background-color: #072;
+        /* height: 1000px; */
+        /* background-color: #072; */
         float: right;
       }
       #isay_block {
@@ -299,6 +296,7 @@
         left: -50px;
         top: 16px;
         display: none;
+        z-index: 10;
       }
       .order li {
         line-height: 40px;
@@ -547,60 +545,60 @@
       .content_item_block3 .content_item_body .left > p {
         margin-top: 7px;
       }
-      .content_item_block3 .info li:nth-child(2){
+      .content_item_block3 .info li:nth-child(2) {
         /* background-color: #072; */
         margin-top: 0px !important;
       }
-      .content_item_block3 .content_item_body_main_info .left .info::before{
+      .content_item_block3 .content_item_body_main_info .left .info::before {
         height: 55px;
       }
       .content_item_block3 .content_item_body .right img {
         height: 107px;
       }
-      .content_item_block4{
+      .content_item_block4 {
         margin-top: 20px;
         border-bottom: 1px solid #e5e5e5;
         padding-bottom: 20px;
       }
-      .content_item_block4 .content_item_body{
+      .content_item_block4 .content_item_body {
         margin-left: 1px !important;
         margin-top: -32px;
       }
-      .content_item_block4 .content_item_body_main_info .left{
+      .content_item_block4 .content_item_body_main_info .left {
         /* padding-top: 10px !important; */
         margin-top: -7px !important;
         margin-left: -1px;
         /* background-color: #072; */
       }
-      .content_item_block4 .foot{
+      .content_item_block4 .foot {
         margin-left: -1px;
       }
-      .content_item_block4 .left{
+      .content_item_block4 .left {
         margin-left: -0.5px !important;
         /* background-color: #072; */
       }
       .content_item_block4 .content_item_body .left > p {
         margin-top: 7px;
       }
-      .content_item_block4 .content_item_body .right{
+      .content_item_block4 .content_item_body .right {
         margin-top: -7px;
       }
       .content_item_block4 .content_item_body .right img {
         height: 106px;
       }
-      .content_item_block4 .content_item_body_main_info .left .info::before{
+      .content_item_block4 .content_item_body_main_info .left .info::before {
         height: 55px;
       }
-      .content_item_block5{
+      .content_item_block5 {
         margin-top: 20px;
         border-bottom: 1px solid #e5e5e5;
         padding-bottom: 20px;
       }
-      .content_item_block5 .content_item_body{
+      .content_item_block5 .content_item_body {
         margin-left: 1px !important;
         margin-top: -33px;
       }
-      .content_item_block5 .content_item_body_main_info .left{
+      .content_item_block5 .content_item_body_main_info .left {
         /* padding-top: 10px !important; */
         margin-top: -8px !important;
         margin-left: -0.5px;
@@ -611,14 +609,294 @@
         /* padding-bottom: 1px; */
         line-height: 1.7;
       }
-      .content_item_block5 .foot{
+      .content_item_block5 .foot {
         margin-left: -1px;
       }
-      .content_item_block5 .content_item_body .right{
+      .content_item_block5 .content_item_body .right {
         margin-top: -8px;
       }
-      .content_item_block5 .content_item_body_main_info .left .info{
+      .content_item_block5 .content_item_body_main_info .left .info {
         margin-top: 3px;
+      }
+      .ad {
+        height: 68px;
+        /* background-color: saddlebrown; */
+        width: 100%;
+        margin-top: 20px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .ad .left img {
+        width: 48px;
+        height: 48px;
+        float: left;
+      }
+      .ad .left span {
+        display: block;
+        /* position: absolute; */
+        color: #555;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+        padding-top: -100px;
+        float: left;
+        margin-left: 14px;
+      }
+      .ad .right {
+        float: right;
+        font-size: 11px;
+      }
+      .ad .right span {
+        border: 1px solid #ccc;
+        padding: 5px 7px 4px;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1;
+        color: #aaa;
+        background-color: #fff;
+      }
+      .ad .right span::after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border: 1px solid #bbb;
+        border-top: 0;
+        border-right: 0;
+        transform: translateY(-2px) rotate(-45deg);
+        display: inline-block;
+        margin-left: 5px;
+      }
+      .paginator {
+        width: 100%;
+        font-size: 15px;
+        margin: 20px 0;
+        line-height: 150%;
+        text-align: center;
+      }
+      .paginator .prev {
+        margin-right: 20px;
+        color: #aaa;
+      }
+      .paginator a,
+      .paginator .thispage,
+      .paginator .break {
+        padding: 0 4px;
+        margin: 2px;
+      }
+      .paginator .thispage {
+        color: #fff;
+        background-color: #83bf73;
+      }
+      .paginator a {
+        color: #37a;
+      }
+      .paginator .break {
+        color: #999;
+      }
+      .paginator a:hover {
+        background-color: #37a;
+        color: #fff;
+      }
+      footer {
+        /* margin: 40px 0 20px 0; */
+        border-top: 1px dashed #ddd;
+        width: 1040px;
+        height: 21px;
+        /* background-color: #072; */
+        margin: 0 auto;
+        font-size: 13px;
+        padding-top: 6px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
+      footer .left {
+        float: left;
+        color: #999;
+      }
+      footer .right {
+        float: right;
+        color: #37a;
+      }
+      footer .right a:hover {
+        color: #fff;
+        background-color: #37a;
+      }
+      .now_block {
+        margin: 0 0 20px;
+        padding: 16px 0 16px 18px;
+        line-height: 1.5;
+        background-color: #f2f7f6;
+        border-radius: 4px;
+      }
+      .now_block h2 {
+        color: #072;
+        font: 15px Arial, Helvetica, sans-serif;
+        margin: 0 0 12px 0;
+        line-height: 150%;
+        font-size: 16px;
+      }
+      .now_block li {
+        color: #37a;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .now_block li a:hover {
+        background-color: #37a;
+        color: #fff;
+      }
+      .mod {
+        margin-bottom: 30px;
+        word-break: break-all;
+        margin-top: 30px;
+      }
+      .mod h2 {
+        color: #072;
+        font-size: 16px;
+        margin: 0 0 12px 0;
+        line-height: 150%;
+        font-weight: normal;
+      }
+      .mod h2 span {
+        color: #37a;
+        font-size: 13px;
+      }
+      .mod h2 span:hover a , .hot h2 span:hover a{
+        color: #fff;
+        background-color: #37a;
+      }
+      .mod > ul li {
+        margin-right: 39px;
+        margin-bottom: 0;
+        margin-top: -1px;
+        width: 80px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      /* .mod .pic{
+        background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0%,transparent 50%,rgba(0,0,0,0.2) 100%);
+        z-index: 10;
+      } */
+      .mod .pic {
+        width: 80px;
+        height: 111px;
+        display: block;
+        /* overflow: visible; */
+        position: relative;
+        margin-bottom: 10px;
+      }
+      .mod .pic img {
+        width: 80px;
+        height: 111px;
+
+        /* overflow: visible; */
+      }
+      .mod .p1::after {
+        content: '';
+        background: url(./image/ic_audio_w@2x.png) center/14px no-repeat;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        bottom: 10px;
+        right: 10px;
+      }
+      .mod .p2::after {
+        content: '';
+        background: url(./image/ic_video_w@2x.png) center/12px no-repeat;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        bottom: 10px;
+        right: 10px;
+      }
+      .mod .pic::before {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          transparent 50%,
+          rgba(0, 0, 0, 0.2) 100%
+        );
+        width: 100%;
+        height: 100%;
+        content: '';
+        top: 0;
+        left: 0;
+        position: absolute;
+        display: block;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .mod .info {
+        color: #333;
+        font-size: 13px;
+        line-height: 1.62;
+        text-align: center;
+        word-break: break-all;
+        position: relative;
+        display: inline-block;
+      }
+      .mod .info:hover {
+        color: #fff;
+        background-color: #37a;
+      }
+      /* .mod ul{
+        width: 100%;
+        height: 228px;
+        background-color: #072;
+      } */
+      .mod ul span {
+        color: #999;
+        line-height: 1;
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+        word-break: break-all;
+        font-size: 13px;
+      }
+      .fixed_active{
+        position: fixed;
+      }
+
+      .hot h2 {
+        color: #072;
+        font-size: 16px;
+        margin: 0 0 11px 0;
+        line-height: 150%;
+        font-weight: normal;
+      }
+      .hot h2 span {
+        color: #37a;
+        font-size: 13px;
+      }
+      .hot h2 span {
+        color: #37a;
+        font-size: 13px;
+      }
+      .hot ul li {
+        /* font-size: 13px; */
+
+        margin-bottom: 15px;
+      }
+      .hot ul li a {
+        color: #37a;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.3;
+        
+        /* display: block; */
+      }
+      .hot ul li a:hover {
+        background-color: #37a;
+        color: #fff;
+      }
+      .hot ul li span {
+        display: block;
+        margin-bottom: 15px;
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 1;
+        color: #aaa;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     </style>
   </head>
@@ -1034,9 +1312,156 @@
               </div>
             </div>
           </div>
+          <div class="ad">
+            <div class="left">
+              <img src="./image/up65510256-30.jpg" alt="" />
+              <span>豆瓣阅读</span>
+            </div>
+            <div class="right">
+              <span>广告</span>
+            </div>
+          </div>
+          <div class="paginator">
+            <span class="prev"><前页</span>
+            <span class="thispage">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <span class="break">...</span>
+            <span><a href="#">后页></a></span>
+          </div>
         </div>
-        <div class="content_right"></div>
+        <div class="content_right">
+          <div class="now_block">
+            <h2>豆瓣正在发生 &nbsp·&nbsp·&nbsp·&nbsp·&nbsp·&nbsp·</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://www.douban.com/people/douban-time/status/3789419310/?_i=6814337nWOwHNX&dt_dapp=1?dt_time_source=douban-ckblood"
+                  >豆瓣时间丨影视作品中的女人们</a
+                >
+              </li>
+              <li>
+                <a href="https://www.douban.com/group/topic/261768582/?_i=6648444aZkydlV"
+                  >止庵 X 文珍 X 林燕谈“吴尔夫的怕与爱”</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mod">
+            <h2>
+              豆瓣时间 &nbsp·&nbsp·&nbsp·&nbsp·&nbsp·&nbsp·
+              <span class="pl">
+                &nbsp(
+                <a href="https://time.douban.com/?dt_time_source=douban-web_guangbo">查看全部</a> )
+              </span>
+            </h2>
+            <ul>
+              <li>
+                <a
+                  class="pic p1"
+                  href="https://m.douban.com/time/column/237?dt_time_source=douban-web_guangbo"
+                >
+                  <img src="./image/a60732e6-90ce-11ec-8f6a-1682c84f5949.jpg" alt="" />
+                </a>
+                <a
+                  class="info"
+                  href="https://m.douban.com/time/column/237?dt_time_source=douban-web_guangbo"
+                >
+                  中国群星闪耀时——先秦诸子40讲
+                </a>
+                <span>音频专栏</span>
+              </li>
+              <li>
+                <a
+                  class="pic p2"
+                  href="https://m.douban.com/time/column/236?dt_time_source=douban-web_guangbo"
+                >
+                  <img src="./image/c24445be-8d79-11ec-84e1-e20dbec84468.jpg" alt="" />
+                </a>
+                <a
+                  class="info"
+                  href="https://m.douban.com/time/column/236?dt_time_source=douban-web_guangbo"
+                  >换种视角看世界——赵林的哲学思维入门课</a
+                >
+                <span>视频专栏</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hot">
+            <h2>
+              热门话题 &nbsp·&nbsp·&nbsp·&nbsp·&nbsp·&nbsp·
+              <span class="pl">
+                &nbsp(
+                <a href="https://www.douban.com/gallery/">去话题广场</a> )
+              </span>
+            </h2>
+            <ul>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/297003/?from=hot_topic_homepage"
+                  >请让我看看你的书架吧</a
+                >
+                <span>2197.7万次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/174103/?from=hot_topic_homepage"
+                  >我所见过的树的姿态</a
+                >
+                <span>623.2万次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/553/?from=hot_topic_homepage"
+                  >看展记</a
+                ><span>8451.4万次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/3321827/?from=hot_topic_homepage"
+                  >那些名人失败的跨界</a
+                ><span>3492次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/3321941/?from=hot_topic_homepage"
+                  >堪称视觉艺术的戏剧表演场面</a
+                ><span>新话题 · 1974次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/3321957/?from=hot_topic_homepage"
+                  >视频·录一段此时此刻的白噪音</a
+                ><span>新话题 · 4112次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/3321066/?from=hot_topic_homepage"
+                  >重塑“想象力”的方式</a
+                ><span>2.3万次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/topic/3321990/?from=hot_topic_homepage"
+                  >让你感叹“原来这就是古诗文里的XXX”的场景</a
+                ><span>7724次浏览</span>
+              </li>
+              <li>
+                <a href="https://www.douban.com/gallery/mine?type=invited"
+                  >> 我被邀请参与的话题(0)</a
+                >
+              </li>
+              <li><a href="https://www.douban.com/gallery/topic/create">+ 发起新话题</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <footer>
+        <div class="left">© 2005－2022 douban.com, all rights reserved 北京豆网科技有限公司</div>
+        <div class="right">
+          <a href="#">关于豆瓣</a> · <a href="#">在豆瓣工作</a> · <a href="#">联系我们</a> ·
+          <a href="#">法律声明</a> · <a href="#">帮助中心</a> · <a href="#">移动应用</a> ·
+          <a href="#">豆瓣广告</a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
