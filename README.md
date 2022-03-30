@@ -10,3 +10,10 @@
 
 ![截图](https://s6.jpg.cm/2022/03/13/L217SR.png)
 
+## ad-switch
+
+![](https://s6.jpg.cm/2022/03/30/LKURs6.gif)
+
+## bilibili-icon-switch
+
+![](https://s6.jpg.cm/2022/03/30/LKU8lL.gif)
