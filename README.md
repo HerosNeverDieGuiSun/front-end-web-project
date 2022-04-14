@@ -20,6 +20,6 @@
 
 ## photo-stream
 
-​	通过栅格布局实现照片墙。栅格还是挺好用的。
+​	通过栅格布局实现照片墙。
 
 ![photo-stream](https://s6.jpg.cm/2022/04/14/LyQttS.png)
