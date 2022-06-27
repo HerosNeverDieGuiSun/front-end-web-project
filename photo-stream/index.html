@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./index.js"></script>
-    <title>照片流</title>
+    <title>Wallpaper</title>
     <style>
       * {
         margin: 0;
@@ -18,6 +18,9 @@
       a:hover,
       a:active {
         text-decoration: none;
+      }
+      body {
+        background-color: #e0ffff;
       }
       ul {
         list-style: none;
@@ -138,38 +141,63 @@
         /* background-color: aqua; */
         grid-auto-flow: row dense;
         column-gap: 10px;
-        
         /* row-gap: 10px; */
       }
       .photo_item {
         grid-auto-columns: 1fr;
+        line-height: 0px;
+        /* background-color: aqua; */
+        height: auto;
+        position: relative;
+      }
+      .photo_item:hover img {
+        transform: scale(1.1);
+        transition: transform 0.5s ease-in-out;
+        -webkit-filter: brightness(70%); /*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
+          filter: brightness(70%);
+      }
+      .photo_item:hover .text::before{
+        opacity: 1;
+        left: 0;
+        transition-delay: 0.3s;
+      }
+      .photo_item:hover .decription{
+        transition: transform 0.5s ease-in-out;
+        transform: translate(0%,0%);
+        opacity: 1;
+        transition-delay: 0.3s;
+        text-transform: uppercase;
+      }
+      .photo_item:hover .date{
+        transition: transform 0.5s ease-in-out;
+        transform: translate(0%,0%);
+        opacity: 1;
+        transition-delay: 0.3s;
+        text-transform: uppercase;
       }
       .photo_grid img {
         vertical-align: bottom;
         cursor: pointer;
+        /* display: block; */
         /* transform:scale(1); */
       }
-      .photo_grid div{
+      .photo_grid div {
         overflow: hidden;
       }
 
-      .photo_grid img:hover{
-        transform:scale(1.1);
-        transition: transform 0.5s ease-in-out;
-      }
-      .loading_outline{
+      .loading_outline {
         height: 40px;
         width: 40px;
         /* background-color: aqua; */
-        margin: 0 auto;
+        margin: 10px auto;
         margin-top: 20px;
         justify-content: space-between;
         display: flex;
       }
-      .loading_outline span{
-        --c:rgb(138, 138, 138);
-        --h:50%;
-        --t:25%;
+      .loading_outline span {
+        --c: rgb(138, 138, 138);
+        --h: 50%;
+        --t: 25%;
         background-color: var(--c);
         width: 3px;
         border-radius: 6px;
@@ -179,61 +207,121 @@
         animation: beating 2.5s infinite;
       }
       .loading_outline span:nth-child(1),
-      .loading_outline span:nth-child(9){
-        --c:black;
-        --h:12px;
-        --t:15px;
+      .loading_outline span:nth-child(9) {
+        --c: black;
+        --h: 12px;
+        --t: 15px;
       }
       .loading_outline span:nth-child(2),
-      .loading_outline span:nth-child(8){
-        --c:black;
-        --h:20px;
-        --t:10px;
+      .loading_outline span:nth-child(8) {
+        --c: black;
+        --h: 20px;
+        --t: 10px;
       }
       .loading_outline span:nth-child(3),
-      .loading_outline span:nth-child(7){
-        --c:black;
-        --h:24px;
-        --t:8px;
+      .loading_outline span:nth-child(7) {
+        --c: black;
+        --h: 24px;
+        --t: 8px;
       }
       .loading_outline span:nth-child(4),
-      .loading_outline span:nth-child(6){
-        --c:black;
-        --h:24px;
-        --t:11px;
+      .loading_outline span:nth-child(6) {
+        --c: black;
+        --h: 24px;
+        --t: 11px;
       }
-      .loading_outline span:nth-child(5){
-        --c:black;
-        --h:27px;
-        --t:13px;
+      .loading_outline span:nth-child(5) {
+        --c: black;
+        --h: 27px;
+        --t: 13px;
       }
       @keyframes beating {
-        0%,30%{
+        0%,
+        30% {
           height: var(--h);
-          top:var(--t);
+          top: var(--t);
           background-color: var(--c);
         }
-        50%,70%{
+        50%,
+        70% {
           height: 50%;
           top: 25%;
           background-color: rgb(138, 138, 138);
         }
       }
-
+      .text {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        z-index: 10;
+      }
+      .text::before {
+        content: '';
+        height: 48%;
+        top: 20%;
+        left: 100%;
+        border-left: 4px white solid;
+        position: absolute;
+        z-index: 20;
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.2s;
+      }
+      .decription {
+        color: white;
+        line-height: 30px;
+        /* inset: 20px; */
+        position: relative;
+        top: 20%;
+        font-weight: 800;
+        display: block;
+        width: 100%;
+        text-align: center;
+        height: 40%;
+        left: 0;
+        opacity: 0;
+        text-transform: uppercase;
+        transform: translate(100%,0%);
+        transition-delay: 0.3s;
+        /* background-color: black; */
+      }
+      .date {
+        position: relative;
+        color: white;
+        line-height: 30px;
+        display: block;
+        font-weight: 600;
+        /* background-color: blue; */
+        width: auto;
+        height: 30px;
+        padding-left: 34%;
+        top: 20%;
+        left: 0;
+        transform: translate(100%,0%);
+        transition-delay: 0.3s;
+        text-transform: uppercase;
+        /* top: 20%; */
+      }
+      .data .decription {
+        text-transform: uppercase;
+        transform: translate(30%, 0%);
+        transition-delay: 0.3s;
+        opacity: 0;
+      }
     </style>
   </head>
   <body>
     <div class="outline">
       <div class="head_outline">
-        <div class="head_name">The Story Of Us.</div>
+        <div class="head_name">WallPaper</div>
         <div class="nav_outline">
           <div class="navbar">
             <input type="checkbox" />
             <span></span>
             <span></span>
             <ul>
-              <li><a href="#">博客</a></li>
-              <li><a href="#">设置</a></li>
+              <li><a href="#">home</a></li>
+              <li><a href="#">setting</a></li>
             </ul>
           </div>
         </div>
